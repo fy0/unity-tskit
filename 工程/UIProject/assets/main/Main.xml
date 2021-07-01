@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1600,900">
+  <controller name="page_state" pages="0,首页,1,游玩界面" selected="0"/>
+  <displayList>
+    <component id="n0_7oxo" name="home" src="tjnt0" fileName="pages/HomePage.xml" xy="0,0">
+      <gearDisplay controller="page_state" pages="0"/>
+    </component>
+    <component id="n1_7oxo" name="game" src="7oxo4" fileName="pages/GamePage.xml" xy="0,0">
+      <gearDisplay controller="page_state" pages="1"/>
+    </component>
+  </displayList>
+</component>

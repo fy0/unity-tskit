@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="180,46" pivot="0.5,0.5" extention="Button">
+  <controller name="button" pages="0,up,1,down" selected="0"/>
+  <controller name="color_state" exported="true" pages="0,黑色,1,金色" selected="0"/>
+  <displayList>
+    <image id="n5_mjxz" name="n5" src="7n7q8" fileName="res/common/btn_bg.png" xy="0,0" size="180,46">
+      <gearDisplay controller="color_state" pages="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n7_7n7q" name="n7" src="7n7qb" fileName="res/common/btn_fun.png" xy="0,0" size="180,46">
+      <gearDisplay controller="color_state" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n6_mjxz" name="title" xy="0,6" size="179,34" fontSize="24" color="#dfd0bd" align="center" vars="true" autoSize="none" singleLine="true" text="按钮">
+      <gearColor controller="color_state" pages="1" values="#3c404d,#000000" default="#dfd0bd,#000000"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </text>
+  </displayList>
+  <Button downEffect="scale" downEffectValue=".8"/>
+</component>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="j8b2cwkb">
+  <resources>
+    <component id="tjnt0" name="PageHome.xml" path="/pages/"/>
+    <component id="7oxo3" name="Main.xml" path="/" exported="true"/>
+    <component id="7oxo4" name="PageGame.xml" path="/pages/"/>
+    <component id="7oxo5" name="DialogConfirm.xml" path="/dialogs/" exported="true"/>
+    <component id="aemq6" name="Button.xml" path="/components/"/>
+    <image id="7n7q8" name="btn_bg.png" path="/res/common/" scale="9grid" scale9grid="19,11,20,24"/>
+    <image id="7n7q9" name="btn_bg2.png" path="/res/common/" scale="9grid" scale9grid="14,9,28,18"/>
+    <image id="7n7qa" name="btn_close.png" path="/res/common/"/>
+    <image id="7n7qb" name="btn_fun.png" path="/res/common/" scale="9grid" scale9grid="26,17,106,36"/>
+    <image id="7n7qc" name="dialog_bg01.png" path="/res/common/" scale="9grid" scale9grid="25,77,44,15"/>
+    <image id="7n7qd" name="icon_setting.png" path="/res/common/"/>
+    <component id="7n7qe" name="ButtonIcon.xml" path="/components/"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>

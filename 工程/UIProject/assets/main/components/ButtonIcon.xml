@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="88,55" pivot="0.5,0.5" extention="Button">
+  <controller name="button" pages="0,up,1,down" selected="0"/>
+  <controller name="bg_state" exported="true" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n4_mjxz" name="n4" src="7n7q9" fileName="res/common/btn_bg2.png" xy="0,0" pivot="0.5,0.5" size="88,55">
+      <gearDisplay controller="bg_state" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <loader id="n3_mjxz" name="icon" xy="21,5" size="45,45" aspect="true" url="ui://j8b2cwkb7n7qd" fill="scaleFree">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </loader>
+  </displayList>
+  <Button downEffect="scale" downEffectValue=".8"/>
+</component>

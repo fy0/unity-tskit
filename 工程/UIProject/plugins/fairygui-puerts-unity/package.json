@@ -1,0 +1,16 @@
+{
+  "name": "fairygui-puerts-unity",
+  "displayName": "Puerts unity 支持",
+  "description": "",
+  "version": "1.0",
+  "author": {
+    "name": "fy0",
+    "email": "fy0748@gmail.com",
+    "url": "https://github.com/fy0"
+  },
+  "icon": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "tsc -w"
+  }
+}
