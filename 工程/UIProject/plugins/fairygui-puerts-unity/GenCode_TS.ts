@@ -60,24 +60,24 @@ function genCode(handler: FairyEditor.PublishHandler, isPuerts = true) {
         let memberCnt = members.Count;
         for (let j: number = 0; j < memberCnt; j++) {
             let memberInfo = members.get_Item(j);
-            writer.writeln('public %s:%s;', memberInfo.varName, memberInfo.type);
+            writer.writeln('public %s: %s;', memberInfo.varName, memberInfo.type);
         }
-        writer.writeln('public static URL:string = "ui://%s%s";', handler.pkg.id, classInfo.resId);
+        writer.writeln('public static URL: string = "ui://%s%s";', handler.pkg.id, classInfo.resId);
         writer.writeln();
 
-        writer.writeln('public static createInstance():%s', classInfo.className);
+        writer.writeln('public static createInstance<T extends %s>(): T', classInfo.className);
         writer.startBlock();
 
         if (isPuerts) {
             writer.writeln(`const obj = <${classInfo.className}>(${ns}.UIPackage.CreateObject("${handler.pkg.name}", "${classInfo.resName}"));`);
-            writer.writeln(`return obj;`);
+            writer.writeln(`return obj as T;`);
         } else {
             writer.writeln('return <%s>(%s.UIPackage.createObject("%s", "%s"));', classInfo.className, ns, handler.pkg.name, classInfo.resName);
         }
         writer.endBlock();
         writer.writeln();
 
-        writer.writeln('protected onConstruct():void');
+        writer.writeln('protected onConstruct ()');
         writer.startBlock();
 
         if (isPuerts) {
@@ -162,12 +162,12 @@ function genCode(handler: FairyEditor.PublishHandler, isPuerts = true) {
         writer.writeln('export default class %s', binderName);
         writer.startBlock();
 
-        writer.writeln('public static bindAll():void');
+        writer.writeln('public static bindAll(): void');
         writer.startBlock();
         for (let i: number = 0; i < classCnt; i++) {
             let classInfo = classes.get_Item(i);
             if (isPuerts) {
-                writer.writeln('bind(%s.URL, %s);', classInfo.className, classInfo.className);
+                writer.writeln('bind(%s);', classInfo.className);
             } else {
                 writer.writeln('%s.UIObjectFactory.setExtension(%s.URL, %s);', ns, classInfo.className, classInfo.className);
             }
@@ -180,21 +180,28 @@ function genCode(handler: FairyEditor.PublishHandler, isPuerts = true) {
         writer.reset();
 
 
-        writer.writeln('import { FairyGUI } from "csharp";');
+        writer.writeln('import { FairyGUI, System } from "csharp";');
         writer.writeln(`
-export function bind<T extends FairyGUI.GComponent>(url: string, cls: new()=> T) {
-  FairyGUI.UIObjectFactory.SetPackageItemExtension(url, () => {
+export function bind(cls: new () => FairyGUI.GComponent) {
+  FairyGUI.UIObjectFactory.SetPackageItemExtension((cls as any).URL, () => {
     const obj = new cls();
-    obj.scriptInstance = FairyGUI.Utils.VirualClassObject.Instance(owner => {
-      const bind_method = (name: string) => {
-        if (name in obj && typeof obj[name] === 'function') {
-          owner.AddMethod(name, () => obj[name]());
-        }
-      };
-      for (const vmethod of ["onConstruct", "onInit", "onShown", "onHide", "doShowAnimation", "doHideAnimation"]) {
-        bind_method(vmethod);
+
+    const tryBind = (actionName: string, funcName: string) => {
+      // 存在则进行绑定
+      if (funcName in obj && typeof obj[funcName] === 'function') {
+        obj[actionName] = new System.Action(obj[funcName].bind(obj));
       }
-    });
+    }
+
+    tryBind('__onConstruct', 'onConstruct');
+    tryBind('__onDispose', 'onDispose');
+
+    tryBind('__onInit', 'onInit');
+    tryBind('__onShown', 'onShown');
+    tryBind('__onHide', 'onHide');
+    tryBind('__doShowAnimation', 'doShowAnimation');
+    tryBind('__doHideAnimation', 'doHideAnimation');
+
     return obj;
   });
 }

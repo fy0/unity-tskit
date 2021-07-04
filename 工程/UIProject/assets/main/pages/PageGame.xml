@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1600,900">
   <displayList>
-    <text id="n8_7oxo" name="n8" xy="440,49" size="719,82" fontSize="24" align="center" vAlign="middle" autoSize="none" text="在这个页面里，玩家正在玩游戏"/>
+    <component id="n6_rbes" name="btnBack" src="aemq6" fileName="components/Button.xml" xy="1280,743" size="220,86" controller="color_state,1">
+      <Button title="返回"/>
+    </component>
+    <text id="n7_cx8u" name="n7" xy="442,303" size="719,82" fontSize="24" align="center" vAlign="middle" autoSize="none" text="在这个页面里，玩家正在玩游戏"/>
   </displayList>
 </component>

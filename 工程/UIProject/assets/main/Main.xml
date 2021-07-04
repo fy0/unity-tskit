@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1600,900">
-  <controller name="page_state" pages="0,首页,1,游玩界面" selected="0"/>
+  <controller name="page_state" pages="0,首页,1,游玩界面" selected="1"/>
   <displayList>
-    <component id="n0_7oxo" name="home" src="tjnt0" fileName="pages/HomePage.xml" xy="0,0">
+    <component id="n0_7oxo" name="home" src="tjnt0" fileName="pages/PageHome.xml" xy="0,0">
       <gearDisplay controller="page_state" pages="0"/>
     </component>
-    <component id="n1_7oxo" name="game" src="7oxo4" fileName="pages/GamePage.xml" xy="0,0">
+    <component id="n1_7oxo" name="game" src="cx8ug" fileName="pages/PageGame.xml" xy="0,0">
       <gearDisplay controller="page_state" pages="1"/>
+    </component>
+    <component id="n2_cx8u" name="btnSetting" src="7n7qe" fileName="components/ButtonIcon.xml" xy="81,38" size="88,66" controller="bg_state,1">
+      <relation target="" sidePair="left-left,top-top"/>
+      <Button title="设置" titleFontSize="12"/>
     </component>
   </displayList>
 </component>

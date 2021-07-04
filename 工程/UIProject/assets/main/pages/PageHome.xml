@@ -7,8 +7,5 @@
     <component id="n6_rbes" name="btnExit" src="aemq6" fileName="components/Button.xml" xy="1280,743" size="220,86" controller="color_state,1">
       <Button title="退出"/>
     </component>
-    <component id="n7_rbes" name="btnSettings" src="7n7qe" fileName="components/ButtonIcon.xml" xy="81,38" size="88,66" controller="bg_state,1">
-      <Button title="设置" titleFontSize="12"/>
-    </component>
   </displayList>
 </component>

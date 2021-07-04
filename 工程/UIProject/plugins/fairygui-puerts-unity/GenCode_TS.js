@@ -52,22 +52,22 @@ function genCode(handler, isPuerts) {
         var memberCnt = members.Count;
         for (var j = 0; j < memberCnt; j++) {
             var memberInfo = members.get_Item(j);
-            writer.writeln('public %s:%s;', memberInfo.varName, memberInfo.type);
+            writer.writeln('public %s: %s;', memberInfo.varName, memberInfo.type);
         }
-        writer.writeln('public static URL:string = "ui://%s%s";', handler.pkg.id, classInfo.resId);
+        writer.writeln('public static URL: string = "ui://%s%s";', handler.pkg.id, classInfo.resId);
         writer.writeln();
-        writer.writeln('public static createInstance():%s', classInfo.className);
+        writer.writeln('public static createInstance<T extends %s>(): T', classInfo.className);
         writer.startBlock();
         if (isPuerts) {
             writer.writeln("const obj = <" + classInfo.className + ">(" + ns + ".UIPackage.CreateObject(\"" + handler.pkg.name + "\", \"" + classInfo.resName + "\"));");
-            writer.writeln("return obj;");
+            writer.writeln("return obj as T;");
         }
         else {
             writer.writeln('return <%s>(%s.UIPackage.createObject("%s", "%s"));', classInfo.className, ns, handler.pkg.name, classInfo.resName);
         }
         writer.endBlock();
         writer.writeln();
-        writer.writeln('protected onConstruct():void');
+        writer.writeln('protected onConstruct ()');
         writer.startBlock();
         if (isPuerts) {
             for (var j = 0; j < memberCnt; j++) {
@@ -143,12 +143,12 @@ function genCode(handler, isPuerts) {
         writer.writeln();
         writer.writeln('export default class %s', binderName);
         writer.startBlock();
-        writer.writeln('public static bindAll():void');
+        writer.writeln('public static bindAll(): void');
         writer.startBlock();
         for (var i = 0; i < classCnt; i++) {
             var classInfo = classes.get_Item(i);
             if (isPuerts) {
-                writer.writeln('bind(%s.URL, %s);', classInfo.className, classInfo.className);
+                writer.writeln('bind(%s);', classInfo.className);
             }
             else {
                 writer.writeln('%s.UIObjectFactory.setExtension(%s.URL, %s);', ns, classInfo.className, classInfo.className);
@@ -158,8 +158,8 @@ function genCode(handler, isPuerts) {
         writer.endBlock(); //class
         writer.save(exportCodePath + '/' + binderName + '.ts');
         writer.reset();
-        writer.writeln('import { FairyGUI } from "csharp";');
-        writer.writeln("\nexport function bind<T extends FairyGUI.GComponent>(url: string, cls: new()=> T) {\n  FairyGUI.UIObjectFactory.SetPackageItemExtension(url, () => {\n    const obj = new cls();\n    obj.scriptInstance = FairyGUI.Utils.VirualClassObject.Instance(owner => {\n      const bind_method = (name: string) => {\n        if (name in obj && typeof obj[name] === 'function') {\n          owner.AddMethod(name, () => obj[name]());\n        }\n      };\n      for (const vmethod of [\"onConstruct\", \"onInit\", \"onShown\", \"onHide\", \"doShowAnimation\", \"doHideAnimation\"]) {\n        bind_method(vmethod);\n      }\n    });\n    return obj;\n  });\n}\n");
+        writer.writeln('import { FairyGUI, System } from "csharp";');
+        writer.writeln("\nexport function bind(cls: new () => FairyGUI.GComponent) {\n  FairyGUI.UIObjectFactory.SetPackageItemExtension((cls as any).URL, () => {\n    const obj = new cls();\n\n    const tryBind = (actionName: string, funcName: string) => {\n      // \u5B58\u5728\u5219\u8FDB\u884C\u7ED1\u5B9A\n      if (funcName in obj && typeof obj[funcName] === 'function') {\n        obj[actionName] = new System.Action(obj[funcName].bind(obj));\n      }\n    }\n\n    tryBind('__onConstruct', 'onConstruct');\n    tryBind('__onDispose', 'onDispose');\n\n    tryBind('__onInit', 'onInit');\n    tryBind('__onShown', 'onShown');\n    tryBind('__onHide', 'onHide');\n    tryBind('__doShowAnimation', 'doShowAnimation');\n    tryBind('__doHideAnimation', 'doHideAnimation');\n\n    return obj;\n  });\n}\n");
         writer.save(exportCodePath + '/fairygui.ts');
     }
 }

@@ -20,7 +20,9 @@ public class ExamplesCfg
             {
                 typeof(Debug),
                 typeof(Vector3),
+                typeof(Rect),
                 typeof(Quaternion),
+                typeof(Resolution),
                 typeof(List<int>),
                 typeof(Dictionary<string, List<int>>),
                 typeof(Time),
@@ -38,6 +40,7 @@ public class ExamplesCfg
                 typeof(MonoBehaviour),
                 typeof(SceneManager),
                 typeof(Scene),
+                typeof(Screen),
                 typeof(Resources)
             };
 

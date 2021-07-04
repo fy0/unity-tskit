@@ -9,8 +9,8 @@
   "compressPNG": false,
   "codeGeneration": {
     "allowGenCode": true,
-    "codePath": "../TsProject/src/views/ui/bind",
-    "classNamePrefix": "UI_",
+    "codePath": "../TsProject/src/gen/ui",
+    "classNamePrefix": "UIRaw_",
     "memberNamePrefix": "m_",
     "packageName": null,
     "ignoreNoname": true,

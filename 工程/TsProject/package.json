@@ -1,0 +1,65 @@
+{
+  "name": "a-long-story",
+  "version": "1.0.0",
+  "description": "once upon a time, ...",
+  "main": "build/index.js",
+  "typings": "build/index.d.ts",
+  "repository": "https://github.com/fy0/unity-tsKit",
+  "license": "Apache-2.0",
+  "keywords": [],
+  "scripts": {
+    "build": "node tools/build.js",
+    "watch": "node tools/watch.js",
+    "fix": "run-s fix:*",
+    "fix:prettier": "prettier \"src/**/*.ts\" --write",
+    "fix:lint": "eslint src --ext .ts --fix",
+    "doc": "run-s doc:html && open-cli build/docs/index.html",
+    "doc:html": "typedoc src/ --exclude **/*.spec.ts --target ES6 --mode file --out build/docs",
+    "doc:json": "typedoc src/ --exclude **/*.spec.ts --target ES6 --mode file --json build/docs/typedoc.json",
+    "version": "standard-version"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "list": "^2.0.19",
+    "lodash-es": "^4.17.20",
+    "mheap": "^1.1.0",
+    "mobx": "^6.0.4",
+    "mobx-collection-watch": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.4",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.0.1",
+    "chokidar": "^3.4.3",
+    "esbuild": "^0.8.26",
+    "eslint": "^7.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-functional": "^3.0.2",
+    "eslint-plugin-import": "^2.22.0",
+    "npm-run-all": "^4.1.5",
+    "open-cli": "^6.0.1",
+    "prettier": "^2.1.1",
+    "standard-version": "^9.3.0",
+    "typedoc": "^0.21.2"
+  },
+  "files": [
+    "build/main",
+    "build/module",
+    "!**/*.spec.*",
+    "!**/*.json",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "prettier": {
+    "singleQuote": true
+  }
+}
