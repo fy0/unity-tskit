@@ -91,6 +91,9 @@ function main () {
   }
 
   const ui = UIPageMain.createInstance();
+
+  // 注：这里的1600, 900为UI项目设计分辨率
+  GRoot.inst.SetContentScaleFactor(1600, 900);
   FairyGUI.GRoot.inst.AddChild(ui);
 }
 ```
@@ -100,22 +103,23 @@ function main () {
 
 ## 更新
 
-### version 1.1
+### version 1.1 - 20210705
 
 * 适配至 FairyGUI-unity 4.2.0，不再支持4.1.0
 * 优化API易用性（bind、createInstance）
 
 
 
-### version 1.0
+### version 1.0 - 20210425
 
 * 初版，支持版本为 FairyGUI-unity 4.1.0 - 1ad0b92 （注意不是4.1.0版本，而是4.1.0之后的第二个commit）
 
 
+
 ## 鸣谢
 
-* 官方插件模板。完成度本身就极高，我只做了一点微小的工作。
+* 官方插件模板。完成度本身就极高了，我只是增补。
 
-* [FairyGUI_GenCode_Lua](https://gitee.com/code_now/FairyGUI_GenCode_Lua) 项目，给了我一些参考，同时指路让我去看官方GenCode。
+* [FairyGUI_GenCode_Lua](https://gitee.com/code_now/FairyGUI_GenCode_Lua) 项目。
 
-* [Geequlim](https://github.com/Geequlim) 大佬，他写了一个 [unity puerts 项目模板](https://github.com/Geequlim/puerts-starter-kit)，我从他那里得知存在这样一种方案，因此得以选择这个技术路线。
+* [Geequlim](https://github.com/Geequlim) 大佬，思路参考自 [unity puerts 项目模板](https://github.com/Geequlim/puerts-starter-kit)。

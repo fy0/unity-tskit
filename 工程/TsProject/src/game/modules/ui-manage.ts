@@ -1,11 +1,10 @@
-import { FairyGUI, Unity, UnityEngine } from 'csharp';
+import { FairyGUI } from 'csharp';
 import { bind } from '../../gen/ui/main/fairygui';
 import mainBinder from '../../gen/ui/main/mainBinder';
 import { UIMain } from '../ui/UIMain';
 import { UIPageGame } from '../ui/UIPageGame';
 import { GameModule } from '../base/game-module';
 import { UIPageHome } from '../ui/UIPageHome';
-import { Game } from '../game';
 
 export class UIManager extends GameModule {
   binds = [

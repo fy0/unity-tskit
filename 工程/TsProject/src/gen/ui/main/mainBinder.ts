@@ -6,17 +6,19 @@ import UIRaw_DialogConfirm from "./UIRaw_DialogConfirm";
 import UIRaw_Button from "./UIRaw_Button";
 import UIRaw_DialogSetting from "./UIRaw_DialogSetting";
 import UIRaw_PageGame from "./UIRaw_PageGame";
+import UIRaw__Frame from "./UIRaw__Frame";
 import UIRaw_PageHome from "./UIRaw_PageHome";
 import { bind } from "./fairygui";
 
 export default class mainBinder {
-	public static bindAll(): void {
+	public static bindAll() {
 		bind(UIRaw_ButtonIcon);
 		bind(UIRaw_Main);
 		bind(UIRaw_DialogConfirm);
 		bind(UIRaw_Button);
 		bind(UIRaw_DialogSetting);
 		bind(UIRaw_PageGame);
+		bind(UIRaw__Frame);
 		bind(UIRaw_PageHome);
 	}
 }

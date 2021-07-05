@@ -143,7 +143,7 @@ function genCode(handler, isPuerts) {
         writer.writeln();
         writer.writeln('export default class %s', binderName);
         writer.startBlock();
-        writer.writeln('public static bindAll(): void');
+        writer.writeln('public static bindAll()');
         writer.startBlock();
         for (var i = 0; i < classCnt; i++) {
             var classInfo = classes.get_Item(i);

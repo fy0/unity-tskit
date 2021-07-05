@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="531,366">
   <displayList>
-    <image id="n7_7n7q" name="n7" src="7n7qc" fileName="res/common/dialog_bg01.png" xy="0,0" size="531,366"/>
-    <text id="n1_7oxo" name="text" xy="64,92" size="403,147" fontSize="24" align="center" vAlign="middle" autoSize="none" text="是否确定？"/>
+    <component id="n9_cx8u" name="frame" src="cx8ui" fileName="dialogs/_Frame.xml" xy="0,0"/>
     <component id="n2_7oxo" name="btnYes" src="aemq6" fileName="components/Button.xml" xy="111,270" size="140,46" group="n4_7oxo">
       <Button title="是"/>
     </component>
@@ -10,6 +9,6 @@
       <Button title="否"/>
     </component>
     <group id="n4_7oxo" name="n4" xy="111,270" size="308,46"/>
-    <text id="n8_7n7q" name="caption" xy="233,11" pivot="0.5,0.5" size="65,41" fontSize="30" color="#d6dedf" align="center" bold="true" text="提示"/>
+    <text id="n1_7oxo" name="text" xy="71,117" size="403,147" fontSize="24" align="center" vAlign="middle" autoSize="none" text="是否确定？"/>
   </displayList>
 </component>

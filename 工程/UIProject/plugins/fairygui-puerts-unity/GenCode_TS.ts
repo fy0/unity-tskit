@@ -162,7 +162,7 @@ function genCode(handler: FairyEditor.PublishHandler, isPuerts = true) {
         writer.writeln('export default class %s', binderName);
         writer.startBlock();
 
-        writer.writeln('public static bindAll(): void');
+        writer.writeln('public static bindAll()');
         writer.startBlock();
         for (let i: number = 0; i < classCnt; i++) {
             let classInfo = classes.get_Item(i);

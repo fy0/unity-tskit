@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="531,366" extention="Button">
+  <displayList>
+    <image id="n7_7n7q" name="n7" src="7n7qc" fileName="res/common/dialog_bg01.png" xy="0,0" size="531,366">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <graph id="n11_cx8u" name="dragArea" xy="14,14" size="514,53" customData="左上留一点边界，防止拖的找不到">
+      <relation target="" sidePair="width-width"/>
+    </graph>
+    <component id="n10_cx8u" name="closeButton" src="7n7qe" fileName="components/ButtonIcon.xml" xy="430,7" size="86,53">
+      <relation target="" sidePair="right-right,top-top"/>
+      <Button icon="ui://j8b2cwkb7n7qa"/>
+    </component>
+    <text id="n8_7n7q" name="title" xy="223,7" pivot="0.5,0.5" size="85,54" fontSize="30" color="#d6dedf" align="center" vAlign="middle" autoSize="none" bold="true" text="提示">
+      <relation target="" sidePair="center-center,top-top"/>
+    </text>
+    <graph id="n12_cx8u" name="contentArea" xy="25,91" size="476,247">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+  </displayList>
+  <Button/>
+</component>
