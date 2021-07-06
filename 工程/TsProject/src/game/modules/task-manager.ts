@@ -23,6 +23,7 @@ export class TaskManager extends GameModule {
     this.#wheel = new TimingWheel(10, 20, game.time.logicTime, this.#dq);
   }
 
+  /** 取消一个周期调用，或者延迟调用 */
   cancel(p: Promise<any> | TimerTaskEntry) {
     if (p instanceof TimerTaskEntry) {
       if (!p.cancelled) {
@@ -41,7 +42,13 @@ export class TaskManager extends GameModule {
     return false;
   }
 
-  interval(duration: number, callback: Function = null) {
+  /**
+   *  周期调用
+   * @param duration 周期时间，单位ms
+   * @param callback 回调函数
+   * @returns 
+   */
+  interval(duration: number, callback: Function = null): TimerTaskEntry {
     if (duration < this.#wheel.tickMs) {
       throw new Error(
         `间隔时间粒度 ${duration} 小于最小允许时间 ${this.#wheel.tickMs}`
@@ -57,6 +64,12 @@ export class TaskManager extends GameModule {
     return node;
   }
 
+  /**
+   * 延迟调用
+   * @param duration 周期时间，单位ms
+   * @param callback 回调函数
+   * @returns 
+   */
   delay(duration: number, callback: Function = null): Promise<any> {
     if (duration < this.#wheel.tickMs) {
       throw new Error(

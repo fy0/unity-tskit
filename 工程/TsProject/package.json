@@ -9,7 +9,7 @@
   "keywords": [],
   "scripts": {
     "build": "node tools/build.js",
-    "watch": "node tools/watch.js",
+    "dev": "node tools/watch.js",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
     "fix:lint": "eslint src --ext .ts --fix",

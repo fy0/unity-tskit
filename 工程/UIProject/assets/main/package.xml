@@ -6,15 +6,18 @@
     <component id="7oxo5" name="DialogConfirm.xml" path="/dialogs/" exported="true"/>
     <component id="aemq6" name="Button.xml" path="/components/"/>
     <image id="7n7q8" name="btn_bg.png" path="/res/common/" scale="9grid" scale9grid="19,11,20,24"/>
-    <image id="7n7q9" name="btn_bg2.png" path="/res/common/" scale="9grid" scale9grid="14,9,28,18"/>
+    <image id="7n7q9" name="img_bg.png" path="/res/common/" scale="9grid" scale9grid="14,9,28,18"/>
     <image id="7n7qa" name="btn_close.png" path="/res/common/"/>
     <image id="7n7qb" name="btn_fun.png" path="/res/common/" scale="9grid" scale9grid="26,17,106,36"/>
     <image id="7n7qc" name="dialog_bg01.png" path="/res/common/" scale="9grid" scale9grid="25,77,44,15"/>
     <image id="7n7qd" name="icon_setting.png" path="/res/common/"/>
-    <component id="7n7qe" name="ButtonIcon.xml" path="/components/"/>
+    <component id="7n7qe" name="IconButton.xml" path="/components/"/>
     <component id="cx8uf" name="DialogSetting.xml" path="/dialogs/" exported="true"/>
     <component id="cx8ug" name="PageGame.xml" path="/pages/"/>
     <component id="cx8ui" name="_Frame.xml" path="/dialogs/"/>
+    <component id="i7x2j" name="IconLabel.xml" path="/components/"/>
+    <image id="j7anl" name="icon_cash.png" path="/res/common/"/>
+    <image id="j7anm" name="icon_repute.png" path="/res/common/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

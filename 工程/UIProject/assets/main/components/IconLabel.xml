@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="121,45" extention="Label">
+  <controller name="type_state" exported="true" pages="4,cash 金钱,5,repute 声望" selected="0"/>
+  <displayList>
+    <image id="n2_mjxz" name="n2" src="7n7q9" fileName="res/common/img_bg.png" xy="0,5" size="115,36">
+      <gearColor controller="type_state" pages="4" values="#ffffff" default="#ffffff"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n0_mjxz" name="title" xy="48,7" size="69,34" fontSize="22" color="#e7eaef" align="center" vAlign="middle" vars="true" autoSize="shrink" singleLine="true" text="{value=123}">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <loader id="n1_mjxz" name="icon" xy="5,0" size="38,38" url="ui://j8b2cwkbj7anl">
+      <gearIcon controller="type_state" pages="4,5" values="ui://j8b2cwkbj7anl|ui://j8b2cwkbj7anm"/>
+      <relation target="" sidePair="middle-middle"/>
+    </loader>
+  </displayList>
+</component>

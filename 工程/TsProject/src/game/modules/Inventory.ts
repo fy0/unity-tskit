@@ -114,18 +114,6 @@ export const Items = {
 		type: ItemType.HIDE,
 	},
 
-	// 鉴定科技，影响遗物出率 [学者]
-	'tech_identify': {
-		id: 9001,
-		title: '科技：鉴定',
-		type: ItemType.HIDE,
-	},
-
-	'count': {
-		id: 9002,
-		title: '前进次数',
-		type: ItemType.HIDE,
-	}
 };
 
 export const ITEM_BY_ID: Record<number, IItem> = {};
@@ -257,8 +245,8 @@ export class Inventory<T = typeof Items> extends GameModule {
 		for (const [k, v] of Object.entries(Items)) {
 			this.points[v as any] = 0;
 		}
-		(this.points as any).cash = 220;
-		// (this.points as any).repute = 220;
+		(this.points as any).cash = 100;
+		(this.points as any).repute = 0;
 		makeObservable(this);
 	}
 }

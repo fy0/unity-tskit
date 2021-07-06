@@ -8,7 +8,6 @@ import { UIManager } from './modules/ui-manage';
 import { ProfileManager } from './modules/profile-manager';
 import { Inventory, Items } from './modules/Inventory';
 import { GameModule } from './base/game-module';
-import { Game } from './game';
 
 interface EGame {
   set: (name: string, count: number) => void;
@@ -33,9 +32,9 @@ export class GameLoop extends SCoreObject {
 
   // 优先初始化列表 - 表中模块会优先初始化，且有序
   precedenceInitMods = [
-    // this.config,
     this.time,
     this.profile,
+    this.inventory
   ]
 
   protected _nextTicks = [];

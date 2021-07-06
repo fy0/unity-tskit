@@ -4,13 +4,13 @@
 
 import { FairyGUI } from "csharp";
 
-export default class UIRaw_ButtonIcon extends FairyGUI.GButton {
+export default class UIRaw_IconButton extends FairyGUI.GButton {
 
 	public m_bg_state: FairyGUI.Controller;
 	public static URL: string = "ui://j8b2cwkb7n7qe";
 
-	public static createInstance<T extends UIRaw_ButtonIcon>(): T {
-		const obj = <UIRaw_ButtonIcon>(FairyGUI.UIPackage.CreateObject("main", "ButtonIcon"));
+	public static createInstance<T extends UIRaw_IconButton>(): T {
+		const obj = <UIRaw_IconButton>(FairyGUI.UIPackage.CreateObject("main", "IconButton"));
 		return obj as T;
 	}
 
