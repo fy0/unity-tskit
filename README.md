@@ -1,12 +1,10 @@
----
-typora-root-url: ./
----
 
 # unity-tskit
 
 
+![screenshot](README.assets/screenshot.png)
 
-这是一个unity项目脚手架，采用的技术方案如下：
+**这是一个unity项目脚手架，采用的技术方案如下：**
 
 * Unity 2019/2020 lts
 * TypeScript 脚本(puerts) - 1.0.13
@@ -18,12 +16,6 @@ typora-root-url: ./
 
 * 快速开始一个项目
 * 合理的目录划分，适用于高效工作流程
-
-
-
-![screenshot](README.assets/screenshot.png)
-
-
 
 
 
@@ -47,7 +39,7 @@ typora-root-url: ./
 
 ### 如何使用
 
-
+----------------------------------
 
 #### 0. 准备环境
 
