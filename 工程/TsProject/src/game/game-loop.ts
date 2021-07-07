@@ -56,6 +56,7 @@ export class GameLoop extends SCoreObject {
   }
 
   protected init() {
+    console.log('模块初始化');
     // 初始化game modules
     const inited = new Set<GameModule>();
     for (const i of this.precedenceInitMods) {
@@ -68,6 +69,7 @@ export class GameLoop extends SCoreObject {
         inited.add(i);
       }
     }
+    console.log('模块初始化完成');
   }
 
   /** 由游戏引擎进行调用 */

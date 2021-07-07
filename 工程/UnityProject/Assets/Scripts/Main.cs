@@ -19,9 +19,10 @@ namespace game
         public static Action<float> jsFixedUpdate;
         public static UIPanel uiMainPanel;
         public static Main main;
+        public static string scriptPath;
 
         public Camera camera;
-        private Anchor playerAnchor;
+        public Anchor playerAnchor;
 
         public void Exit()
         {
@@ -46,8 +47,11 @@ namespace game
                 return;
             }
 
-            var loader = new DefaultLoader(Path.Combine(UnityEngine.Application.dataPath, "Resources", "tsbuild"));
-            Debug.Log(Path.Combine(UnityEngine.Application.dataPath, "Resources", "tsbuild"));
+            // 注：脚本的实际路径是 Main.scriptPath/tsbuild
+            // 这里
+            Main.scriptPath = Path.Combine(UnityEngine.Application.dataPath, "Resources");
+            var loader = new DefaultLoader(Main.scriptPath);
+            Debug.Log(Main.scriptPath);
             _jsEnv = new JsEnv(loader);
             // _jsEnv.WaitDebugger();
 

@@ -33,7 +33,7 @@
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "chokidar": "^3.4.3",
-    "esbuild": "^0.8.26",
+    "esbuild": "0.8.54",
     "eslint": "^7.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
@@ -42,6 +42,7 @@
     "npm-run-all": "^4.1.5",
     "open-cli": "^6.0.1",
     "prettier": "^2.1.1",
+    "source-map-support": "^0.5.19",
     "standard-version": "^9.3.0",
     "typedoc": "^0.21.2"
   },

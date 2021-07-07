@@ -1,4 +1,5 @@
+import './utils/puerts-source-map-support'
 import { Game } from './game/game';
 
-const game = Game.inst;
-game.start();
+
+Game.inst.start();

@@ -26,6 +26,7 @@ public class ExamplesCfg
                 typeof(List<int>),
                 typeof(Dictionary<string, List<int>>),
                 typeof(Time),
+                typeof(Application),
                 typeof(Transform),
                 typeof(Component),
                 typeof(GameObject),

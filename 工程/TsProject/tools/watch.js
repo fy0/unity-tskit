@@ -1,12 +1,10 @@
-const { startService } = require("esbuild");
+const { build } = require("esbuild");
 const chokidar = require("chokidar");
 const debounce = require('./_debounce.js');
 const config = require('./build-config');
 
 
 (async () => {
-  const service = await startService();
-
 	// `chokidar` watcher source changes.
 	chokidar
 		// Watches TypeScript and React TypeScript.
@@ -17,7 +15,7 @@ const config = require('./build-config');
 		.on("all", debounce(async (e, path) => {
       const timerStart = Date.now();
       try {
-        await service.build(config)
+        await build(config)
       } catch (e) {
       }
       const timerEnd = Date.now();
