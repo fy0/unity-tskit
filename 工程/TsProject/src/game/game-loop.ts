@@ -8,6 +8,7 @@ import { UIManager } from './modules/ui-manage';
 import { ProfileManager } from './modules/profile-manager';
 import { Inventory, Items } from './modules/Inventory';
 import { GameModule } from './base/game-module';
+import { StoryManager } from './modules/story-manager';
 
 interface EGame {
   set: (name: string, count: number) => void;
@@ -20,6 +21,7 @@ export class GameLoop extends SCoreObject {
   ev: Emitter<EGame>;
 
   config = new Config();
+  csMain: game.Main;
 
   // 注：直接将模块写为成员的原因，一方面task等模块大量使用，Game.inst.task.delay 比 Game.inst.mods.task.delay 好些；另一方面Game这个类暴露的东西不多。
   // modules
@@ -28,6 +30,7 @@ export class GameLoop extends SCoreObject {
   ui = new UIManager(this as any);
   profile = new ProfileManager(this as any);
   inventory = new Inventory<typeof Items>(this as any);
+  story = new StoryManager(this as any);
   // modules end
 
   // 优先初始化列表 - 表中模块会优先初始化，且有序
@@ -46,6 +49,7 @@ export class GameLoop extends SCoreObject {
 
   /** 绑定到unity */
   protected bindToEngine() {
+    this.csMain = game.Main.main;
     game.Main.jsUpdate = this.update.bind(this);
     game.Main.jsFixedUpdate = this.updateFixed.bind(this);
   }

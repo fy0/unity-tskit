@@ -9,6 +9,9 @@ import UIRaw_PageGame from "./UIRaw_PageGame";
 import UIRaw__Frame from "./UIRaw__Frame";
 import UIRaw_IconLabel from "./UIRaw_IconLabel";
 import UIRaw_PageHome from "./UIRaw_PageHome";
+import UIRaw_DialogStoryBox from "./UIRaw_DialogStoryBox";
+import UIRaw_DialogStoryChoices from "./UIRaw_DialogStoryChoices";
+import UIRaw_StoryChoicesItem from "./UIRaw_StoryChoicesItem";
 import { bind } from "./fairygui";
 
 export default class mainBinder {
@@ -22,5 +25,8 @@ export default class mainBinder {
 		bind(UIRaw__Frame);
 		bind(UIRaw_IconLabel);
 		bind(UIRaw_PageHome);
+		bind(UIRaw_DialogStoryBox);
+		bind(UIRaw_DialogStoryChoices);
+		bind(UIRaw_StoryChoicesItem);
 	}
 }

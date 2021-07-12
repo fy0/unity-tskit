@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="180,46" extention="Button">
+  <controller name="button" pages="0,up,1,down" selected="0"/>
+  <displayList/>
+  <Button downEffect="scale" downEffectValue=".8"/>
+</component>

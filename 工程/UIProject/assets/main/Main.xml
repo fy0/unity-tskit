@@ -2,7 +2,7 @@
 <component size="1600,900">
   <controller name="page_state" pages="0,首页,1,游玩界面" selected="0"/>
   <displayList>
-    <component id="n0_7oxo" name="home" src="tjnt0" fileName="pages/PageHome.xml" xy="0,0">
+    <component id="n0_7oxo" name="home" src="tjnt0" fileName="pages/PageHome.xml" xy="0,2">
       <gearDisplay controller="page_state" pages="0"/>
     </component>
     <component id="n1_7oxo" name="game" src="cx8ug" fileName="pages/PageGame.xml" xy="0,0">

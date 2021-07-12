@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1600,900">
   <displayList>
+    <component id="n8_v44r" name="btnStory" src="aemq6" fileName="components/Button.xml" xy="1280,627" size="220,86" controller="color_state,1">
+      <Button title="我是剧情"/>
+    </component>
     <component id="n6_rbes" name="btnBack" src="aemq6" fileName="components/Button.xml" xy="1280,743" size="220,86" controller="color_state,1">
       <Button title="返回"/>
     </component>

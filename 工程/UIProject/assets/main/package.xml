@@ -18,6 +18,10 @@
     <component id="i7x2j" name="IconLabel.xml" path="/components/"/>
     <image id="j7anl" name="icon_cash.png" path="/res/common/"/>
     <image id="j7anm" name="icon_repute.png" path="/res/common/"/>
+    <component id="v44rn" name="DialogStoryBox.xml" path="/dialogs/" exported="true"/>
+    <component id="v44ro" name="DialogStoryChoices.xml" path="/dialogs/" exported="true"/>
+    <component id="v44rp" name="StoryChoicesItem.xml" path="/components/" exported="true"/>
+    <component id="v44rq" name="TransparentButton.xml" path="/components/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>
