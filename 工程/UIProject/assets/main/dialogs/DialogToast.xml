@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1600,900" opaque="false">
+  <controller name="pos_state" pages="0,底部,1,顶部" selected="0"/>
+  <displayList>
+    <component id="n11_v44r" name="toast" src="v44rr" fileName="components/Toast.xml" xy="229,693">
+      <gearXY controller="pos_state" pages="1" values="229,145" default="229,693"/>
+    </component>
+  </displayList>
+  <transition name="fx_flash" autoPlay="true" autoPlayRepeat="-1"/>
+</component>

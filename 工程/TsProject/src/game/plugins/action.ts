@@ -1,5 +1,5 @@
 import { Unit } from './unit';
-import { makeAutoObservable, autorun, reaction, observable } from 'mobx';
+import { makeAutoObservable, reaction, observable } from 'mobx';
 import { SObject } from '../../core/object';
 import { Emitter } from '../../core/event';
 

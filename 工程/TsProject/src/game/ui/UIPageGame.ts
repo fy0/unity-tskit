@@ -26,7 +26,7 @@ export class UIPageGame extends UIRaw_PageGame {
       }
 
       await s.tell('P.S.');
-      await s.tell('在正式使用之前， [b][color=#ff0000]强烈建议[/color][/b]先阅读一下项目路径下的README.md');
+      await s.tell('在正式使用之前，[b][color=#ff0000]强烈建议[/color][/b]先阅读一下项目路径下的README.md');
       await s.tell('祝你顺利。');
       s.hide();
 

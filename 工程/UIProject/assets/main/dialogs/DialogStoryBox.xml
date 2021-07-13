@@ -2,7 +2,7 @@
 <component size="1600,900">
   <displayList>
     <graph id="n4_yd85" name="n4" xy="60,523" size="1479,347" group="n9_o5yn" alpha="0.8" type="rect" lineSize="0" lineColor="#ffcccccc" fillColor="#ff000000" corner="15"/>
-    <text id="n5_yd85" name="content" xy="114,574" size="1373,232" group="n9_o5yn" fontSize="38" color="#ffffff" ubb="true" vars="true" autoSize="none" text="测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本"/>
+    <text id="n5_yd85" name="content" xy="114,574" size="1373,232" group="n9_o5yn" fontSize="38" color="#ffffff" ubb="true" vars="true" autoSize="shrink" text="测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本"/>
     <text id="n7_yd85" name="n7" xy="1459,807" size="38,46" group="n9_o5yn" fontSize="34" color="#ffffff" bold="true" text="↓"/>
     <group id="n9_o5yn" name="n9" xy="60,523" size="1479,347" advanced="true">
       <relation target="" sidePair="bottom-bottom"/>

@@ -2,9 +2,17 @@ import { Emitter } from './event';
 import { TimerTaskEntry } from '../game/modules/timer/timer-task-list';
 import { Game } from '../game/game';
 
+let _objIdCounter = 1;
+
 export class SCoreObject {
   ev = new Emitter(this);
   game: Game;
+  id: number;
+
+  constructor () {
+    this.id = _objIdCounter;
+    _objIdCounter += 1;
+  }
 }
 
 export class SObject extends SCoreObject {

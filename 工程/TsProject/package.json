@@ -8,7 +8,7 @@
   "license": "Apache-2.0",
   "keywords": [],
   "scripts": {
-    "build": "node tools/build.js",
+    "build": "cross-env NODE_ENV=production node tools/build.js",
     "dev": "node tools/watch.js",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
@@ -33,6 +33,7 @@
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "chokidar": "^3.4.3",
+    "cross-env": "^7.0.3",
     "esbuild": "0.8.54",
     "eslint": "^7.8.0",
     "eslint-config-prettier": "^6.11.0",

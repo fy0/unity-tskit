@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="797,100">
+  <displayList>
+    <graph id="n29_qenf" name="n29" xy="0,0" size="797,100" alpha="0.7" type="rect" lineSize="0" fillColor="#ff000000" corner="15"/>
+    <text id="n28_qenf" name="txt" xy="37,4" size="721,93" fontSize="30" color="#ffffff" vAlign="middle" ubb="true" vars="true" autoSize="shrink" text="只是一小段话罢了"/>
+  </displayList>
+</component>
