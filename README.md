@@ -16,6 +16,11 @@
 
 * 快速开始一个项目
 * 合理的目录划分，适用于高效工作流程
+* 提供一套基于标准前端项目规格的ts框架
+* 提供背包、存档、叙事、UI管理等内置模块
+* 整合脚本对FairyGUI的访问和控制
+* 整合source-map支持
+* 提供URP渲染管线扩展包
 
 
 
@@ -25,7 +30,7 @@
   * UnityProject 主项目
   * TsProject 脚本项目
   * UIProject 界面项目
-* 资源 - 主要面向策划和美术，使用svn进行版本管理
+* 资源 - 主要面向策划和美术，使用svn或git lfs进行版本管理
   * UI资源
   * 策划文档
   * 创意
@@ -54,11 +59,17 @@
 
 建立游戏项目目录，将本项目以zip形式下载并解压（不太建议git clone）。
 
-在“工程”目录建立git项目，在资源目录建立svn项目。
+如果使用git单版本管理，建议：全部加入版本库，对资源目录启用**lfs**扩展。
+
+如果你使用git/svn双版本管理，建议：在“工程”目录建立git项目，在资源目录建立svn项目。
+
+>  如果你要使用URP渲染管线，将 **工程/urp-mod/UnityProject** 整个覆盖到 **工程/UnityProject** 下。
+>
+> 不使用的话urp-mod目录可以删除。
 
 
 
-#### 2. 配置puerts
+#### 2. 安装puerts依赖
 
 自行去puerts的release页面下载一个v8，例如我们使用1.0.13版本，下载这个：
 
@@ -68,7 +79,7 @@ https://github.com/Tencent/puerts/releases/tag/v1.0.13
 
 
 
-用Unity打开 **工程\UnityProject**，
+用Unity打开 **工程\UnityProject**（如果打开时有版本不符提示一律upgrade、ignore），
 
 ![screenshot-1](README.assets/screenshot-1.png)
 
